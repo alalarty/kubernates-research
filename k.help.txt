@@ -35,6 +35,8 @@ k explain pods
 k explain pods.spec
 ...
 
+Logs
+
 k logs kubia-manual-v1.0 // pod name
 k logs kubia-manual-v1.0 -c kubia-con // container name
 
