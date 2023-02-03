@@ -1,0 +1,44 @@
+minikube start
+minikube dashboard
+
+k cluster-info
+
+k get nodes
+k describe node minikube
+
+// kubectl run kubia --image=xesx/kubia --port=3000
+
+kubectl create deployment kubia --image=xesx/kubia --port=3000
+- 3000 - app port in kubia container
+
+// kubectl expose pod kubia --type=LoadBalancer --name kubia-http
+kubectl expose deployment kubia --type=LoadBalancer --name kubia-http
+minikube service kubia-http
+
+
+k get all
+
+k get pods
+k get pods -o wide
+k delete pods --all
+
+k get services
+k delete service --all
+
+k scale deployment kubia --replicas=3
+
+
+k get pod kubia-78d5f495fd-sk5gg -o yaml
+k get pod kubia-78d5f495fd-sk5gg -o json
+
+k explain pods
+k explain pods.spec
+...
+
+k logs kubia-manual-v1.0 // pod name
+k logs kubia-manual-v1.0 -c kubia-con // container name
+
+// zsh autocomplete plugin
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/#zsh
+
+
